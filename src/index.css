@@ -18,6 +18,12 @@ body {
   scrollbar-width: none;
 }
 
+.site-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 header {
     height: 110px;
     display: flex;
@@ -44,6 +50,21 @@ header a:hover {
     color: #161616;
     text-decoration: underline;
 }
+
+
+footer {
+    background-color: #252525;
+    color: #AAAAAA;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    justify-content: center;
+    bottom: o;
+    width: 100vw;
+    height: 75px;
+    padding-top: 20px;
+}
+
 
 .link-button {
     display: inline-block;
@@ -306,15 +327,3 @@ i[class*='van-type-'] {
     font-weight: 600;
 }
 
-footer {
-    background-color: #252525;
-    color: #AAAAAA;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    justify-content: center;
-    bottom: o;
-    width: 100vw;
-    height: 75px;
-    padding-top: 20px;
-}
