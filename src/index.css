@@ -129,6 +129,7 @@ header a:hover {
 
 .about-page-content p {
     line-height: 22px;
+    width: 70%;
 }
 
 .about-page-cta {
@@ -137,6 +138,7 @@ header a:hover {
     padding-inline: 32px;
     padding-bottom: 32px;
     margin-inline: 27px;
+    margin-bottom: 20px;
     border-radius: 5px;
 }
 
@@ -153,7 +155,7 @@ header a:hover {
 
 /*** VAN PAGES ***/
 .van-list-container {
-    padding-inline: 23px
+    padding-inline: 23px;
 }
 
 .van-list {
@@ -162,6 +164,7 @@ header a:hover {
     justify-items: center;
     gap: 34px;
     margin-top: 57px;
+    margin-bottom: 20px;
 }
 
 .van-tile a {
