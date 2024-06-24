@@ -50,7 +50,15 @@ header a:hover {
     color: #161616;
     text-decoration: underline;
 }
-
+ .nav-link {
+    border: none;
+    border-radius: 16px;
+    background-color: #FF8C38;
+    color: #FFF7ED;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+ }
 
 footer {
     background-color: #252525;
