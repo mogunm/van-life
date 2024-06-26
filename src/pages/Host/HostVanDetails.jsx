@@ -24,15 +24,11 @@ export default function HostVanDetail() {
     }
 
     // use end because it is matching the parent route since it is the index 
-
+    // relative prop means that it goes back to the current path not the route so we are going back one level in our path structure
+    
     return (
         <section>
-            <Link
-                to=".."
-                relative="path" // this means that it is relative to the path not the route so we are going back one level in our path structure
-                className="back-button"
-            >&larr; <span>Back to all vans</span></Link>
-
+        <Link to=".." relative="path" className="back-button">&larr; <span>Back to all vans</span></Link>
             <div className="host-van-detail-layout-container">
                 <div className="host-van-detail">
                     <img src={currentVan.imageUrl} />

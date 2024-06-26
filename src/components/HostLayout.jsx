@@ -1,5 +1,6 @@
 import React from "react";
 import { Outlet, Link, NavLink } from "react-router-dom";
+import "./HostLayout.css"
 
 export default function HostLayout() {
     const activeStyles = {

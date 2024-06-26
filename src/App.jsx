@@ -17,8 +17,8 @@ import HostVanPricing from './pages/Host/HostVanPricing'
 import "./server"
 
 export default function App() {
+  // using relative path instead of absolute for nested routes 
   return (
-    // using relative path instead of absolute for nested routes 
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
