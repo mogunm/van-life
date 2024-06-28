@@ -1,14 +1,24 @@
-import React from "react"
+import React, { useEffect, useState }from "react"
 import { Link } from "react-router-dom"
 import "./HostVans.css"
 
 export default function HostVans() {
-    const [vans, setVans] = React.useState([])
+    const [vans, setVans] = useState([])
 
-    React.useEffect(() => {
-        fetch("/api/host/vans")
-            .then(res => res.json())
-            .then(data => setVans(data.vans))
+    useEffect(() => {
+        async function loadVans() {
+            setLoading(true)
+            try {
+                const data = await getHostVans()
+                setCurrentVan(data)
+            } catch (err) {
+                setError(err)
+            } finally {
+                setLoading(false)
+            }
+        }
+
+        loadVans()
     }, [])
 
     const hostVansEls = vans.map(van => (

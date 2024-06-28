@@ -1,10 +1,10 @@
-import React from "react"
+import React, {useEffect, useState} from "react"
 import { useParams, Link, Outlet, NavLink } from "react-router-dom"
 import "./HostVanDetails.css"
 
 export default function HostVanDetail() {
     const { id } = useParams()
-    const [currentVan, setCurrentVan] = React.useState(null)
+    const [currentVan, setCurrentVan] = useState(null)
     const active = ({isActive}) => isActive ? activeStyles : null
     
     const activeStyles = {
@@ -13,11 +13,21 @@ export default function HostVanDetail() {
         color: "#161616"
     }
 
-    React.useEffect(() => {
-        fetch(`/api/host/vans/${id}`)
-            .then(res => res.json())
-            .then(data => setCurrentVan(data.vans))
-    }, [])
+    useEffect(() => {
+        async function loadVans() {
+            setLoading(true)
+            try {
+                const data = await getHostVans(id)
+                setCurrentVan(data)
+            } catch (err) {
+                setError(err)
+            } finally {
+                setLoading(false)
+            }
+        }
+
+        loadVans()
+    }, [id])
 
     if (!currentVan) {
         return <h1>Loading...</h1>
