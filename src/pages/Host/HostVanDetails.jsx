@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react"
 import { useParams, Link, Outlet, NavLink } from "react-router-dom"
+import { getHostVans } from "../../api"
 import "./HostVanDetails.css"
 
 export default function HostVanDetail() {

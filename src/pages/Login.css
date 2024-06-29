@@ -5,6 +5,10 @@
     padding-inline: 27px;
 }
 
+.login-container p {
+    color: black;
+}
+
 .login-form {
     display: flex;
     flex-direction: column;

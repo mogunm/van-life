@@ -31,7 +31,7 @@ export default function Header(){
                     </ul>
                 </div>
             </nav>
-            <Link to="login" className="login-link">
+            <Link to="/login" className="login-link">
                 <img src={imageUrl} className="login-icon" />
             </Link>
         </header>

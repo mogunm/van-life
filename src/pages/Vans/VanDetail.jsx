@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react"
+import { getVans } from "../../api"
 import { useParams, useLocation, Link } from "react-router-dom"
 import "./VanDetail.css"
 
