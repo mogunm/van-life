@@ -5,13 +5,23 @@ import "./Login.css"
 
 export default function Login() {
     const [loginFormData, setLoginFormData] = React.useState({ email: "", password: "" })
+    const [status, setStatus] = useState("idle")
+    const [error, setError] = useState(null)
     const location = useLocation()
 
     function handleSubmit(e) {
         e.preventDefault()
+        setStatus("Submitting...")
         async function login() {
-            const data = await loginUser(loginFormData)
-            console.log(data)
+            try {
+                const data = await loginUser(loginFormData)
+                console.log(data)
+                
+            } catch(err) {
+                setError(err)
+            } finally {
+                setStatus("idle")
+            }
         }
 
         login()
@@ -28,8 +38,9 @@ export default function Login() {
 
     return (
         <div className="login-container">
-            <h1>Sign in to your account</h1>
             <p>{location.state?.message}</p>
+            <h1>Sign in to your account</h1>
+            <p>{error?.message}</p>
             <form onSubmit={handleSubmit} className="login-form">
                 <input
                     name="email"
@@ -45,7 +56,7 @@ export default function Login() {
                     placeholder="Password"
                     value={loginFormData.password}
                 />
-                <button>Log in</button>
+                <button disabled={status === "Submitting..."}>[status === "Submitting..." ? "Logging in..." : "Log in"]</button>
             </form>
         </div>
     )

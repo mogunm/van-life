@@ -6,6 +6,7 @@ import "./HostVanDetails.css"
 export default function HostVanDetail() {
     const { id } = useParams()
     const [currentVan, setCurrentVan] = useState(null)
+    const [loading, setLoading] = useState(false)
     const active = ({isActive}) => isActive ? activeStyles : null
     
     const activeStyles = {

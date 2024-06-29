@@ -10,6 +10,7 @@ export default function VanDetail(){
     // this hook returns the current location object of the page https://reactrouter.com/en/main/hooks/use-location
     const location = useLocation()
     const [van, setVan] = useState(null)
+    const [loading, setLoading] = useState(false)
 
     // re-run effect if the id of the parameter were to change possible feature for later 
     useEffect(() => {

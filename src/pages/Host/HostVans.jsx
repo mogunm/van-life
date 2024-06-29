@@ -4,14 +4,15 @@ import { getHostVans } from "../../api"
 import "./HostVans.css"
 
 export default function HostVans() {
-    const [vans, setVans] = useState([])
+    const [vans, setCurrentVans] = useState([])
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         async function loadVans() {
             setLoading(true)
             try {
                 const data = await getHostVans()
-                setCurrentVan(data)
+                setCurrentVans(data)
             } catch (err) {
                 setError(err)
             } finally {
